@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <script src="{{ url_for('static', filename='validations.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Agrega tu archivo de estilos -->
+</head>
+<body>
+    <h2>Perfil de Usuario</h2>
+    
+    <form action="{{ url_for('profile') }}" id="profileForm" method="post"required>
+
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" value="{{ user['name'] }}"required readonly>
+        <br>
+
+        <label for="Apellido">Apellido:</label>
+        <input type="text" id="lastname" name="lastname" value="{{ user['lastname'] }}"required readonly>
+        <br>
+
+        <label for="gmail">Nombre de usuario:</label>
+        <input type="email" id="username" name="username" value="{{ user['username'] }}" required readonly>
+        <br>
+
+        <label for="gmail">Correo Electrónico:</label>
+        <input type="email" id="gmail" name="gmail" value="{{ user['gmail'] }}" required>
+        <br>
+        
+        <label for="password">Nueva Contraseña (opcional):</label>
+        <input type="password" id="password" name="password">
+        <br>
+        
+        <button type="submit">Actualizar</button>
+    </form>
+
+    <a href="{{ url_for('logout') }}">Cerrar Sesión</a>
+</body>
+</html>
