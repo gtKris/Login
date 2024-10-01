@@ -27,6 +27,143 @@ body {
     overflow: hidden;
 }
 
+.forgot-password-form {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.forgot-password-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.forgot-password-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--gray-2);
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.forgot-password-form input[type="email"]:focus {
+    border-color: var(--primary-color);
+}
+
+.forgot-password-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.forgot-password-form button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Estilos para el formulario de verificación */
+.verification-form {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.verification-form label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.verification-form input[type="text"],
+.verification-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--gray-2);
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.verification-form input[type="text"]:focus,
+.verification-form input[type="password"]:focus {
+    border-color: var(--primary-color);
+}
+
+.verification-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.verification-form button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Estilos para el formulario de perfil */
+.profile-form {
+    background-color: #f9f9f9; /* Color de fondo del formulario */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del formulario */
+    border-radius: 5px; /* Esquinas redondeadas */
+    max-width: 500px; /* Ancho máximo del formulario */
+    margin: 20px auto; /* Centrar el formulario */
+}
+
+.profile-form label {
+    display: block; /* Asegurar que las etiquetas ocupen su línea */
+    margin-bottom: 5px; /* Espaciado debajo de las etiquetas */
+    font-weight: bold; /* Negrita para las etiquetas */
+}
+
+.profile-form input {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno del campo de entrada */
+    margin-bottom: 15px; /* Espaciado debajo de los campos de entrada */
+    border: 1px solid #ccc; /* Borde de los campos de entrada */
+    border-radius: 5px; /* Esquinas redondeadas */
+}
+
+.update-button {
+    width: 100%; /* Ancho completo del botón */
+    padding: 10px; /* Espaciado interno del botón */
+    background-color: var(--primary-color); /* Color de fondo del botón */
+    color: var(--white); /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Esquinas redondeadas */
+    font-size: 1rem; /* Tamaño de la fuente */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+.update-button:hover {
+    background-color: var(--secondary-color); /* Color de fondo del botón en hover */
+}
+
+
+
 .container {
     position: relative;
     min-height: 100vh;

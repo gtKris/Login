@@ -1,0 +1,30 @@
+<form method="POST" action="/verify_code?gmail={{ gmail }}" class="verification-form">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
+  <label for="reset_code">Código de verificación:</label>
+  <input type="text" name="reset_code" placeholder="Introduce el código" required>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <label for="new_password">Nueva contraseña:</label>
+  <input type="password" name="new_password" placeholder="Introduce tu nueva contraseña" required>
+  
+  <button type="submit">Restablecer contraseña</button>
+
+  {% with message=session.pop('message', None) %}
+  {% if message %}
+      <script>
+          const title = "{{ 'Éxito!' if session.get('message_type') == 'success' else 'Error!' }}";
+          const text = "{{ message|escape }}";  // Escapa caracteres especiales
+          const icon = "{{ session.get('message_type') }}";
+          
+          Swal.fire({
+              title: title,
+              text: text,
+              icon: icon,
+              confirmButtonText: 'Aceptar'
+          });
+      </script>
+  {% endif %}
+{% endwith %}
+
+</form>
+
+  

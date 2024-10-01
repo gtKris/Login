@@ -6,7 +6,7 @@
     <title>Registro e Inicio de Sesión</title>
     <script src="{{ url_for('static', filename='validations.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Agrega tu archivo de estilos -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 
@@ -66,7 +66,7 @@
                             Iniciar sesión
                         </button>
                         <p>
-                            <b>¿Olvidaste tu contraseña?</b>
+                            <p><a href="{{ url_for('forgot_password') }}"><b>¿Olvidaste tu contraseña?</b></a></p>
                         </p>
                         <p>
                             <span>¿No tienes una cuenta?</span>
@@ -100,9 +100,27 @@
             <!-- END SIGN UP CONTENT -->
         </div>
         <!-- END CONTENT SECTION -->
-    </div>2
+    </div>
     
-<script src="{{ url_for('static', filename='toggle.js') }}"></script>
+    <script src="{{ url_for('static', filename='toggle.js') }}"></script>
+
+    <!-- Handling SweetAlert messages -->
+    {% with message=session.pop('message', None) %}
+        {% if message %}
+            <script>
+                const title = "{{ 'Éxito!' if session.get('message_type') == 'success' else 'Error!' }}";
+                const text = "{{ message|escape }}";  // Escapa caracteres especiales
+                const icon = "{{ session.get('message_type') }}";
+                
+                Swal.fire({
+                    title: title,
+                    text: text,
+                    icon: icon,
+                    confirmButtonText: 'Aceptar'
+                });
+            </script>
+        {% endif %}
+    {% endwith %}
 
 </body>
 </html>
